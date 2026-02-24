@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Frontend Web App</h2>
+    <button onclick="loadData()">Load Backend Data</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        async function loadData() {
+            const res = await fetch("https://lab01-backend-api.azurewebsites.net/api/data");
+            const data = await res.json();
+            document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
