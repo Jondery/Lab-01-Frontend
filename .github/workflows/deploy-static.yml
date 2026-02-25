@@ -1,0 +1,21 @@
+name: Deploy Static HTML to Azure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'lab01-frontend-app'  # Replace with your actual App Service name
+          package: .
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISH_PROFILE }}
