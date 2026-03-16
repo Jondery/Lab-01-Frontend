@@ -15,7 +15,7 @@
         async function loadBackendData() {
             try {
                 // Replace with your deployed backend API URL
-                const response = await fetch("https://backendapp-fpg6cch0fwfwhzcg.australiasoutheast-01.azurewebsites.net/api/data");
+                const response = await fetch("https://backdend-b3hzbjfgg4crhahn.australiasoutheast-01.azurewebsites.net/api/data");
                 const data = await response.json();
                 document.getElementById('output').textContent = JSON.stringify(data, null, 2);
             } catch (err) {
